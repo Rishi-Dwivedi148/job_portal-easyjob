@@ -1,0 +1,94 @@
+
+
+
+<div class="container " style="font-family: 'Poppins',sans-serif; font-weight: 10;">
+    <div class="container p-3 mx-auto w-50 my-5 rounded-md form-box">
+        <h3 style="color: #181462 ; font-family: 'Poppins', sans-serif;" class="text-center mb-3">Post a new job</h2>
+            
+        <form action="/jobs/update/" method="post">
+            <div hidden class="mb-3 input-group">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" class="form-control" id="id" name="id" value="<%= job.id %>">
+            </div>
+            <div class="input-group mb-3">
+                <select name="category" class="form-select">
+                    <option selected disabled>Select Job Category</option>
+                    <option value="Tech">tech</option>
+                    <option value="non_tech" >Non Tech</option>
+                    <option value="<%= job.category %>" selected><%= job.category %></option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <select name="designation" class="form-select">
+                    <option selected disabled>Select Job designation</option>
+                    <option value="developer">Developer</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="HR">HR</option>
+                    <option value="SDE">SDE</option>
+                    <option value="MERN">MERN DEVELOPER</option>
+                    <option value="Java">JAVA DEVELOPER</option>
+                    <option value="FRONT END DEVELOPER">FRONT END DEVELOPER</option>
+                    <option value="BACK END DEVELOPER">BACK END DEVELOPER</option>
+                    <option value="<%= job.designation %>" selected><%= job.designation %></option>
+
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <label for="location" class="form-label" style="font-weight: 200;">Enter job location</label>
+                <div class="input-group mb-3"><input type="text" name="location" class="form-control" value="<%= job.location %>"></div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">Company Name</div>
+                <input type="text" name="company" class="form-control" value="<%= job.company %>">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="salary" class="form-control" placeholder="Eanter a Salary" value="<%= job.salary %>">
+                <div class="input-group-text">No. of Positions</div>
+                <input type="number" class="form-control" name="positions" step="0" min="1" value="<%= job.positions %>">
+            </div>
+            <div class="input-group mb-3">
+                <select name="skills" id="job_skills" class="form-select" multiple >
+                    <option disabled selected >Skills Requred for this job</option>
+                    <!-- <option disabled selected>Skills Requred for this job</option> -->
+                        <% skills_available.forEach(skill => { %>
+                        <option value="<%= skill %>" 
+                            <% if (job.skills.find(skillInJob => skillInJob.toUpperCase() == skill.toUpperCase())) { %>
+                            selected
+                            <% } %>>
+                            <%= skill %>
+                        </option>
+                        <% }) %>
+
+                    
+                    <!-- <option value="React">React</option>
+                    <option value="Node">Node</option>
+                    <option value="MongoDB">MongoDB</option>
+                    <option value="Express">Express</option>
+                    <option value="C++">C++</option>
+                    <option value="Python">Python</option>
+                    <option value="Angular">Angular</option>
+                    <option value="springBoot">SpringBoot</option>
+                    <option value="java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="web_development">Web web Development</option> -->
+                </select>
+                <span class="input-group-text">Apply By:</span>
+                <input type="text" name="time" class="form-control" value="<%= job.time %>">
+            </div>
+            <button type="submit" class="btn btn-md btn-success w-100 mb-3 mt-2 p-2">Create a Job</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <% skills_available.forEach(skill => { %>
+    <% var ele = job.skills.find(ele => ele == skill); %>
+    <% if(ele){ %>
+        <option value="<%= skill %>" selected><%= skill %></option>
+    <% }else{ %>
+        <option value="<%= skill %>"><%=skill %></option>
+    <% } %>
+    
+
+<%  }) %> -->

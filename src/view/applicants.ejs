@@ -1,0 +1,23 @@
+<div class="container p-1 my-2 " style= "font-family: 'Poppins' , sans-serif; font-weight: 250; font-style: normal;">
+
+    <table class="table table-hover table-striped ">
+        <thead>
+            <tr>
+                <th scope="col"> #</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Caontact</th>
+                <th scope="col">Resume</th>
+            </tr>
+        </thead>
+        <% applicants.forEach((applicant)=>{  %>
+        <tbody >
+            <th scope="row"><%= applicant.id %></th>
+            <td ><%= applicant.name %></th>
+            <td ><%= applicant.email %></th>
+            <td ><%= applicant.contact %></th>
+            <td><a href="<%= applicant.resume %>" class="btn btn-sm btn-primary">View</a></td>
+        </tbody>
+        <% }) %>
+    </table>
+</div>

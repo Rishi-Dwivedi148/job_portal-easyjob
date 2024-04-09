@@ -1,0 +1,127 @@
+ body, html {
+    font-family: "Poppins" , sans-serif;
+    
+}
+body {
+    font-family: 'Poppins', sans-serif;
+} 
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+.formbox{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-top: 5px solid #181642;
+    border-left: 3px solid #181642;
+    border-radius: 10px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.skill-set {
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+
+.width-class{
+    width: 18rem;
+    margin-top: 3rem;
+    padding: 1rem;
+    border-color: white;
+}
+
+#mynav {
+    background-color: #181642 !important;
+    color: white;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 10px; */
+}
+
+.container-lpage{
+    height: 100vh;
+    background-color: #181642;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 780px) {
+    /* Your CSS styles here */
+    #home_container{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+  
+
+
+.main-heading {
+    color: #FF2C90;
+    /* font-weight: bolder; */
+    font-size: 2.5em;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lbtn {
+    background-color: #FF2C90;
+    color: #FFFFFF;
+}
+
+.lbtn:hover {
+    background-color: #da096a;
+    color: #FFFFFF;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.bg-theme{
+    background-color: #181642;
+    color: white;
+}
+
+
+/* .formbox{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-top: 5px solid #181642;
+    border-left: 3px solid #181642;
+    border-radius: 10px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.skill-set {
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+} */

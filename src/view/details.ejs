@@ -1,0 +1,121 @@
+
+<div class="container d-flex justify-content-center align-items-centre" style="font-family: 'Poppins';">
+    <div class="card m-3 " style="width: 70vw; height: auto;">
+        <img src="https://files.codingninjas.com/web-banner-28759.png" class="card-img-top" alt="poster">
+        <div class="card-body ">
+          <h1 class="card-title text-center text-success fs-1">
+            <span class="text-danger"><%= job.designation %></span>
+            <%= job.location %>
+            <span class="text-info"><%= job.company %></span>
+          </h1>
+          <div class="container  d-flex flex-column justify-content-start my-3">
+            <% if(locals.email){ %>
+                <h5 class="my-1 "><%= job.company %>
+                <span><a href="update/<%= job.id  %>"><i class="bi bi-pencil-square text-info px-2 "></i></a></span>
+                <span><i class="bi bi-trash3-fill text-danger" onclick="deleteProduct('<%= job.id %>')"></i></span>
+                </h5>
+            <% }else{ %>
+                <h5 class="my-1"><%= job.company %>
+                    <!-- <span><a href="update/<%= job.id  %>"><i class="bi bi-pencil-square text-info px-2 "></i></a></span>
+                    <span onclick="deleteProduct('<%= job.id %>')"><i class="bi bi-trash3-fill text-danger" ></i></span> -->
+                </h5>
+            <% } %>
+            <div><%= job.category %> <span class="text-success"><%= job.designation %></span></div>
+            <div class="container d-flex flex-column justify-content-start p-1">
+                <span ><i class="bi bi-geo"></i><%= " "+ job.location %></span>
+                <span><i class="bi bi-currency-rupee"></i><span><%= job.salary + " lpa" %></span></span>
+                <span><i class="bi bi-hourglass-split"></i> Apply Before  <%=  job.time %></span>
+                <span><i class="bi  bi-bar-chart-fill"></i> Number of openings <%= job.positions %></span>
+                <a href="/applicants/<%= job.id %>" class="text-danger"><i class="bi bi-people-fill "></i> Applicants   
+                    <% if(job.applicants === undefined){  %>
+                            0 
+                    <%  }else{  %>
+                            <%= job.applicants.length %>
+                    <% }  %>
+                    </a>
+            </div>
+          </div>
+          
+          <div class="container">
+            <div class="p-1 skill-set"></div>
+            <% job.skills.forEach( (job)=>{ %>
+                    <button class="btn btn-sm btn-outline-info"><%= job %></button>    
+            <% }) %>
+          </div>
+
+          <div class="modal_apply">
+            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-sm btn-primary px-5 m-3">Apply Now</button>
+
+          <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-success" id="staticBackdropLabel">Job Portal</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container p-3 mx-auto formbox w-75 my-5 rounded-md" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-top: 5px solid #181642; border-left: 3px solid #181642; border-radius: 10px;">
+                            <h4 class="text-center mb-3" style="color: #181642;">Aplly in less than 1 minute</h4>
+                            <div class="eror" style="font-weight: 300;">
+                                <% if(errorMessage){  %>
+                                    <div class="alert alert-danger">
+                                        <%= errorMessage %>
+                                    </div>
+                                <% } %>
+                            </div>
+                            <form action="apply/<%= job.id %>" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Name</span>
+                                        <input type="text" id="applicant_name" required  name="applicant_name" class="form-control" placeholder="Enter your Name">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Email</span>
+                                        <input type="text" id="applicant_email" required name="applicant_email" class="form-control" placeholder="Enter your Email Address">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Contact No.</span>
+                                        <input type="tel" id="applicant_contact" required name="applicant_contact" class="form-control" placeholder="+91_ _ _ _ _">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <label for="user_resume" class="input-group-text">Resume</label>
+                                        <input type="file" id="applicant_resume" name="applicant_resume" id="user_resume" class="form-control" accept=".pdf" required>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-success w-100 mt-2 " type="submit">Submit</button>
+                                    
+                                
+                            </form>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          
+                
+           <small class="">
+            <div style="max-width: 250px; margin-top: 1rem; width: 40vw;" class="bg-success text-white border border-success border border-success p-1 border-opacity-50 rounded">
+                <!-- Posted: 3/12/2024 , 11:12:34 AM -->
+                Posted : <%= job.jobPosted %>
+            </div>
+           </small> 
+        </div>
+          
+          
+          
+    </div>
+</div>
+ 

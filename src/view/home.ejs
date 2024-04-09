@@ -1,0 +1,110 @@
+
+<div class="container-lpage poppins-regular ">
+  <% if(locals.lastVisit){ %>
+    <div class="alert alert-primary">
+        your last visit is on : <%= locals.lastVisit %>
+    </div>
+  <% } %>
+
+    <div class="container main" id="home_container">
+      <div class="left p-2 poppins-regular">
+        <h1 class="main-heading poppins-regular ">A comprehensive platform for reliable</h1>
+        <h2 class="text-white ml12 poppins-regular "><span class="letter" style="opacity: 0.472691; transform: translateX(-15.8193px);">j</span><span class="letter" style="opacity: 0.601677; transform: translateX(-11.9497px);">o</span><span class="letter" style="opacity: 0.700576; transform: translateX(-8.98273px);">b</span> <span class="letter" style="opacity: 0.769728; transform: translateX(-6.90815px);">o</span><span class="letter" style="opacity: 0.817665; transform: translateX(-5.47006px);">p</span><span class="letter" style="opacity: 0.851859; transform: translateX(-4.44422px);">p</span><span class="letter" style="opacity: 0.877114; transform: translateX(-3.68659px);">o</span><span class="letter" style="opacity: 0.896355; transform: translateX(-3.10935px);">r</span><span class="letter" style="opacity: 0.911401; transform: translateX(-2.65796px);">t</span><span class="letter" style="opacity: 0.923424; transform: translateX(-2.29729px);">u</span><span class="letter" style="opacity: 0.933205; transform: translateX(-2.00384px);">n</span><span class="letter" style="opacity: 0.941288; transform: translateX(-1.76137px);">i</span><span class="letter" style="opacity: 0.948057; transform: translateX(-1.55829px);">t</span><span class="letter" style="opacity: 0.953796; transform: translateX(-1.38613px);">i</span><span class="letter" style="opacity: 0.958715; transform: translateX(-1.23855px);">e</span><span class="letter" style="opacity: 0.962976; transform: translateX(-1.11071px);">s</span> <span class="letter" style="opacity: 0.966704; transform: translateX(-0.998873px);">a</span><span class="letter" style="opacity: 0.969997; transform: translateX(-0.900085px);">n</span><span class="letter" style="opacity: 0.972933; transform: translateX(-0.811998px);">d</span> <span class="letter" style="opacity: 0.975576; transform: translateX(-0.732717px);">i</span><span class="letter" style="opacity: 0.977977; transform: translateX(-0.6607px);">n</span><span class="letter" style="opacity: 0.980177; transform: translateX(-0.59468px);">t</span><span class="letter" style="opacity: 0.982213; transform: translateX(-0.533608px);">e</span><span class="letter" style="opacity: 0.984113; transform: translateX(-0.476607px);">r</span><span class="letter" style="opacity: 0.985902; transform: translateX(-0.422943px);">n</span><span class="letter" style="opacity: 0.9876; transform: translateX(-0.371996px);">s</span><span class="letter" style="opacity: 0.989225; transform: translateX(-0.323239px);">h</span><span class="letter" style="opacity: 0.990793; transform: translateX(-0.276222px);">i</span><span class="letter" style="opacity: 0.992315; transform: translateX(-0.230561px);">p</span><span class="letter" style="opacity: 0.993802; transform: translateX(-0.185926px);">s</span><span class="letter" style="opacity: 0.995266; transform: translateX(-0.142032px);">.</span></h2>
+        <h5 class="text-white poppins-regular ">Get Discovered. Get Hired.</h5>
+        <div class="actions">
+          <a href="/jobs" class="btn btn-lg lbtn poppins-regular "> I'm A Job Seeker </a>
+          <button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-lg lbtn mx-2 poppins-regular ">
+            I'm A Recruiter
+            <!-- button for register modal -->
+          </button>
+      </div>
+      </div>
+      <div class="right">
+        <!-- <img src="images/banner.png" alt="banner"> -->
+        <img src="https://files.codingninjas.in/438375-17407.webp" alt="banner" />
+      </div>
+    </div> 
+    <!-- Modal for register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-success" id="registerModalLabel">Experience Hirect!!!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/" method="post">
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Name</span>
+                  <input type="text" name="user_name" class="form-control" id="user_name">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Email</span>
+                  <input type="text" name="user_email" class="form-control" id="user_email">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Passwaord</span>
+                  <input type="password" name="user_Password" class="form-control" id="user_Password">
+                </div>
+              </div>
+              <!-- <a type="submit" href="/login" class="btn btn-sm lbtn">Submit</a> -->
+              <button type="submit" class="btn btn-sm lbtn">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer d-flex align-items-centre justify-content-between">
+            <div class="left d-flex flex-row align-items-centre justify-content-center">
+              <span>Already registerd ?</span>
+              <button type="button" class="btn btn-sm btn-outline-success" data-bs-target="#loginModal" data-bs-toggle="modal">Login</button>
+              <!-- button for Login Modal -->
+            </div>
+            <div class="right d-flex flex-end" style="gap: 10px;">
+              <a href="#"><i class="text-primary bi bi-twitter fs-4"></i></a>
+              <a href="#"><i class="text-danger bi bi-instagram fs-4"></i></a>
+              <a href="#"><i class="text-info bi bi-facebook fs-4" ></i></a>
+              <a href="#"><i class="text-success bi bi-whatsapp fs-4"></i></a>
+              <a href="#"><i class="text-primary bi bi-linkedin fs-4"></i></a>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+    </div> 
+    <!-- Modal for Login-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-success" id="loginModalLabel">Experience Hirect</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/login" method="post">
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Email</span>
+                  <input type="email" name="user_email" class="form-control">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Passwaord</span>
+                  <input type="email" name="user_Password" class="form-control">
+                </div>
+              </div>
+              <button class="btn btn-sm lbtn">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+   </div>
+    
+</div>
