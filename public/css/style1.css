@@ -65,6 +65,9 @@ body {
         display: flex;
         flex-direction: column;
     }
+    #createjob{
+        width:80% !important;
+    }
   }
   
 
