@@ -31,7 +31,15 @@ export default class ApplicantsModel{
 
 }
 
-export var applicants = [
+export var applicants1 = [
     new ApplicantsModel(1 , "Palak" , "palaks08@gmail.com" , 7987684225 , "resume.pdf"),
+    new ApplicantsModel(2 , "Anul" , "Analmishra@234gmail.com" , 8269913260 , "resumeAnal.pdf")
+]
+export var applicants2 = [
+    new ApplicantsModel(1 , "rakesh" , "rakesh08@gmail.com" , 7987684225 , "resume.pdf"),
+    new ApplicantsModel(2 , "sakarmak" , "anulmishra@234gmail.com" , 8269913260 , "resumeAnal.pdf")
+]
+export var applicants3 = [
+    new ApplicantsModel(1 , "Param" , "params08@gmail.com" , 7987684225 , "resume.pdf"),
     new ApplicantsModel(2 , "Anul" , "Analmishra@234gmail.com" , 8269913260 , "resumeAnal.pdf")
 ]
