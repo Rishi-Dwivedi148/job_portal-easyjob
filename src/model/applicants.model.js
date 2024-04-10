@@ -14,7 +14,7 @@ export default class ApplicantsModel{
         const job = jobModel.detail(id);
         const jobApplicant = job.applicants
         let applicant = new ApplicantsModel(
-            applicants.length + 1,
+            jobApplicant.length + 1,
             name ,
             email,
             contact,
@@ -24,9 +24,9 @@ export default class ApplicantsModel{
 
     }
 
-    static getAllApplicant(){
-        return applicants;
-    }
+    // static getAllApplicant(){
+    //     return applicants;
+    // }
         
 
 }
