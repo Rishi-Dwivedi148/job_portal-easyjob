@@ -1,5 +1,7 @@
 import ApplicantsModel from "./applicants.model.js";
-import { applicants }  from "./applicants.model.js";
+import { applicants1 }  from "./applicants.model.js";
+import { applicants2 } from "./applicants.model.js";
+import { applicants3 } from "./applicants.model.js";
 
 export default class jobModel{
     constructor(id ,category , designation , location , company , salary , skills , positions , time , jobPosted , applicants ){
@@ -23,6 +25,7 @@ export default class jobModel{
     static addJob(category , designation , location , company , salary , skills , position , time , jobPosted ){
         const id = jobs.length + 1;
         // const position = this.addJob.positions - 1
+        const applicant = [];
         const newjob = new jobModel(id , 
                 category ,
                 designation ,
@@ -33,7 +36,7 @@ export default class jobModel{
                 position,
                 time,
                 jobPosted,
-                applicants);
+                applicant);
 
         jobs.push(newjob)
 
@@ -69,11 +72,11 @@ export default class jobModel{
 
 var jobs = [
     new jobModel(1 ,"tech" , "developer" , "banglore" , "Google" , "20-30" ,
-          ["react" , "node" , "Mongo DB" , "express"] ,6 ,'03-03-2024' , "29-02-2024, 11:10:32 PM" , applicants ),
+          ["react" , "node" , "Mongo DB" , "express"] ,6 ,'03-03-2024' , "29-02-2024, 11:10:32 PM" , applicants1 ),
     new jobModel(2 , "non tech" , "BDA" , "Indore" , "Hirect" , "8-10" ,
-         ["MBA" , "econonmics" , "financial Management" , "C   ++" , "python" , "SAP"] ,  4 , '03-04-2024' , "01-04-2024, 11:10:32 PM" , applicants),
+         ["MBA" , "econonmics" , "financial Management" , "C   ++" , "python" , "SAP"] ,  4 , '03-04-2024' , "01-04-2024, 11:10:32 PM" , applicants2),
     new jobModel(3 ,"tech" , "Devops" , "Indore" , "Hirect" , "12-18" ,
-         ["react" , "node" , "Mongo DB" , "express" , "C++" , "Javascript"], 4 , '13-04-2024' , "10-04-2024, 11:10:32 PM" , applicants )
+         ["react" , "node" , "Mongo DB" , "express" , "C++" , "Javascript"], 4 , '13-04-2024' , "10-04-2024, 11:10:32 PM" , applicants3 )
 ]
 
 // console.log(jobs[0].applicants)
